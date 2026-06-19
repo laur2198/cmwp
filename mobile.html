@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crafty Kids | Making Magic with Cezar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#6f5400",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#e0d9ce",
+                    "primary-container": "#3fa9f5",
+                    "on-background": "#1e1b15",
+                    "surface-variant": "#e9e1d7",
+                    "surface-bright": "#fff8f1",
+                    "inverse-surface": "#343029",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdad8",
+                    "on-surface": "#1e1b15",
+                    "secondary-fixed": "#ffdf9a",
+                    "surface-container-high": "#efe7dc",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#95ccff",
+                    "on-tertiary-fixed": "#410006",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f5ede2",
+                    "on-primary-container": "#003b5f",
+                    "outline-variant": "#bfc7d2",
+                    "on-secondary-fixed-variant": "#5a4300",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#770113",
+                    "inverse-on-surface": "#f7f0e5",
+                    "on-secondary-fixed": "#251a00",
+                    "primary": "#006399",
+                    "on-surface-variant": "#3f4851",
+                    "secondary-fixed-dim": "#f4bf32",
+                    "surface": "#fff8f1",
+                    "surface-container-highest": "#e9e1d7",
+                    "secondary": "#775a00",
+                    "secondary-container": "#fdc73a",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#95ccff",
+                    "background": "#fff8f1",
+                    "on-primary-fixed-variant": "#004a75",
+                    "surface-tint": "#006399",
+                    "outline": "#6f7882",
+                    "on-tertiary-fixed-variant": "#8c1520",
+                    "surface-container-low": "#faf3e8",
+                    "on-primary-fixed": "#001d32",
+                    "tertiary": "#ae2f34",
+                    "primary-fixed": "#cde5ff",
+                    "tertiary-container": "#ff7876",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Nunito Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .scalloped-edge {
+            mask-image: radial-gradient(circle at 10px 10px, transparent 10px, black 11px);
+            mask-size: 20px 20px;
+        }
+        .washi-tape-yellow {
+            background-color: #fdc73a;
+            opacity: 0.85;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            transform: rotate(-5deg);
+        }
+        .washi-tape-blue {
+            background-color: #3fa9f5;
+            opacity: 0.85;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            transform: rotate(3deg);
+        }
+        .paper-stack {
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.1), 4px 8px 16px rgba(0,0,0,0.05);
+        }
+        .torn-edge-bottom {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 98% 97%, 95% 94%, 92% 98%, 88% 94%, 85% 97%, 80% 93%, 75% 98%, 70% 94%, 65% 97%, 60% 92%, 55% 98%, 50% 94%, 45% 97%, 40% 93%, 35% 98%, 30% 94%, 25% 97%, 20% 92%, 15% 98%, 10% 94%, 5% 97%, 0% 93%);
+        }
+        .btn-shadow {
+            box-shadow: 0 4px 0 0 rgba(0,0,0,0.2);
+        }
+        .btn-shadow:active {
+            box-shadow: 0 0px 0 0 rgba(0,0,0,0.2);
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container font-body-md">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 border-b-4 border-dashed border-outline-variant bg-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-headline-lg">menu</span>
+<h1 class="font-headline-xl text-headline-xl tracking-tighter text-primary rotate-[-1deg]">Crafty Kids</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-headline-lg">shopping_basket</span>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto overflow-hidden">
+<!-- Hero Section -->
+<section class="relative px-margin-mobile pt-12 pb-20 bg-surface-bright overflow-hidden">
+<div class="relative z-10 flex flex-col gap-6">
+<div class="relative w-fit mx-auto rotate-1 mb-4">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-6 washi-tape-blue z-20"></div>
+<div class="bg-white p-3 pb-12 shadow-xl border border-surface-variant rotate-[-2deg]">
+<img class="w-64 h-64 object-cover" data-alt="A bright and colorful Polaroid-style photograph of a cheerful 8-year-old boy named Cezar. He is wearing a creative artist's apron covered in paint splatters, sitting at a wooden workbench surrounded by cardboard prototypes, colorful pipe cleaners, and tools. The lighting is warm and natural, suggesting a sunny afternoon in a home workshop. The overall style is tactile and scrapbooked." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbyN3FtKbTFEbYTYqTVuN8v2gpX3BEPiZqlu0fgeBs2O3OZ60hZXdUlqtrbnzmX0WzbodX_IGdhjfYSL3q-ZCU7ZBltokiVLhXSAWohaDI8euTM4nZu8_1Bt1ilAUTX5bYMN7shUh8HDJwXlu0qrsd5zDjrF80MgikwYimMehyjNLSGK1He3Ao8PMgwR-c3Fh7lIG8yuqluufkvmy9nkiG-NoDVdaK1cZQ6CGcpnRqmHfdeix1klo2"/>
+<p class="absolute bottom-4 left-0 right-0 text-center font-headline-md text-primary opacity-70">That's Me!</p>
+</div>
+</div>
+<div class="text-center space-y-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Hi! I'm Cezar — I turn ideas into handmade magic.</h2>
+<p class="font-body-md text-on-surface-variant px-4">I'm an 8-year-old maker who loves to build things that make people smile. From recycled rockets to custom gifts, I make it all!</p>
+</div>
+<div class="flex flex-col gap-4 mt-4 px-4">
+<button class="bg-primary text-on-primary py-4 px-8 rounded-xl font-label-lg btn-shadow transition-all hover:scale-105 active:scale-95">
+                        See my creations
+                    </button>
+<button class="bg-secondary-container text-on-secondary-container py-4 px-8 rounded-xl font-label-lg btn-shadow transition-all hover:scale-105 active:scale-95">
+                        Order something special
+                    </button>
+</div>
+</div>
+<!-- Background Doodles -->
+<div class="absolute top-10 right-[-10px] opacity-20 rotate-12">
+<span class="material-symbols-outlined text-[120px] text-tertiary">draw</span>
+</div>
+<div class="absolute bottom-10 left-[-20px] opacity-20 -rotate-12">
+<span class="material-symbols-outlined text-[100px] text-primary">auto_awesome</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="px-margin-mobile py-16 bg-surface-container relative">
+<div class="absolute top-0 left-0 right-0 h-8 torn-edge-bottom bg-surface-bright rotate-180"></div>
+<div class="bg-white p-6 rounded-lg paper-stack border-l-4 border-primary rotate-1 space-y-6">
+<div class="flex items-center gap-3">
+<div class="bg-secondary-container p-2 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Meet the Maker</h3>
+</div>
+<p class="font-body-md leading-relaxed">
+                    I'm in 2nd grade and I've been building stuff since I was big enough to hold a glue stick! Every piece I make is unique because I think of the story behind it while I'm working.
+                </p>
+<div class="grid gap-3">
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg border border-surface-variant">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<span class="font-label-lg text-on-surface">Designs it myself</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg border border-surface-variant">
+<span class="material-symbols-outlined text-secondary">handyman</span>
+<span class="font-label-lg text-on-surface">Builds by hand</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg border border-surface-variant">
+<span class="material-symbols-outlined text-tertiary">favorite</span>
+<span class="font-label-lg text-on-surface">Made with passion</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="px-margin-mobile py-16 space-y-8 bg-surface">
+<div class="text-center">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">What I Make</h3>
+<div class="w-16 h-1 bg-secondary-container mx-auto mt-2"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Custom Design -->
+<div class="bg-white p-4 rounded-xl paper-stack border border-surface-variant -rotate-2 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-primary mb-2">brush</span>
+<h4 class="font-label-lg text-primary">Custom Design</h4>
+<p class="text-[12px] text-on-surface-variant mt-1">Tell me your idea and I'll draw it!</p>
+</div>
+<!-- Handmade Builds -->
+<div class="bg-white p-4 rounded-xl paper-stack border border-surface-variant rotate-2 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-secondary mb-2">home_repair_service</span>
+<h4 class="font-label-lg text-secondary">Handmade Builds</h4>
+<p class="text-[12px] text-on-surface-variant mt-1">Wooden blocks, forts, and more.</p>
+</div>
+<!-- Gift Crafts -->
+<div class="bg-white p-4 rounded-xl paper-stack border border-surface-variant rotate-1 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-tertiary mb-2">card_giftcard</span>
+<h4 class="font-label-lg text-tertiary">Gift Crafts</h4>
+<p class="text-[12px] text-on-surface-variant mt-1">Cards and toys for your friends.</p>
+</div>
+<!-- Recycled Creations -->
+<div class="bg-white p-4 rounded-xl paper-stack border border-surface-variant -rotate-3 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-primary mb-2">recycling</span>
+<h4 class="font-label-lg text-primary">Eco Art</h4>
+<p class="text-[12px] text-on-surface-variant mt-1">Turning trash into treasures!</p>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="px-margin-mobile py-16 bg-surface-container-lowest overflow-hidden">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-center mb-10">My Work</h3>
+<div class="space-y-12">
+<div class="relative rotate-[-2deg]">
+<div class="absolute -top-3 left-4 w-20 h-5 washi-tape-yellow z-10"></div>
+<div class="bg-white p-2 shadow-lg border border-surface-variant">
+<img class="w-full h-48 object-cover" data-alt="A close-up shot of a magnificent cardboard castle built by a child. It features towers made of toilet paper rolls, a drawbridge with real string, and hand-painted stone patterns. The background is a soft, out-of-focus craft room. The lighting is bright and cheerful, highlighting the handmade textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaYurZbZ4KBIvU8q4rVLibDBtfMic-dMm-RZnHcMY4IAPWKH69oTDbmcGyc_HkRzX5OwguaMqZWST_VYsae1x4q6veTzFUSRR7gjjaE9N9P6YDepSl5EhekLoYHp3CwQ3X-Feghdi6T6SlwJk0wgmIAh40LkezHVrkVYtebokxdWTiAtElnMAPaD2A7u-om6ZbM0Fbpb1SIY_OCdh6uxfios_wOJVWsBYFTbiajoh8aStjsZNz5mZZ"/>
+<div class="py-3 px-1 text-center">
+<p class="font-label-lg text-primary opacity-80" style="font-family: cursive;">Cardboard Castle</p>
+</div>
+</div>
+</div>
+<div class="relative rotate-[3deg]">
+<div class="absolute -top-2 right-4 w-16 h-5 washi-tape-blue z-10 rotate-12"></div>
+<div class="bg-white p-2 shadow-lg border border-surface-variant">
+<img class="w-full h-48 object-cover" data-alt="A vibrant and colorful collage of recycled materials like bottle caps, buttons, and old magazines turned into a giant sun art piece. The colors are bright yellows, oranges, and sky blues. The texture of the physical materials is clearly visible. Soft daylight highlights the dimensional quality of the craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuUdiLLIEBteEPeiDL1hasCf3mp-AHqPT8VgRdT7AZz5h6-i-dltis9UflwgS-m66Xi1SRifd8rmnjVJ6YY_4zOOfj8jGSXTPCQVtawhP2H5D1KcKsbqMYGvBP6I5XifKwzL5y6mNA_srbOHfRdF_cbKQCT5UX9lj2ikVDyoMRwUYH_YPgm07siY7dlJMO6P1BJsDX8cePvFs9QxkGQjfjLDQzn0uMqwzYCl2wN_AVtMmeXkN8lttp"/>
+<div class="py-3 px-1 text-center">
+<p class="font-label-lg text-secondary opacity-80" style="font-family: cursive;">Recycled Sun Art</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="px-margin-mobile py-16 bg-surface relative">
+<div class="absolute -left-4 top-20 w-1 bg-dashed border-l-4 border-dashed border-outline-variant h-full"></div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-10 pl-6">How I Work</h3>
+<div class="space-y-10 pl-10 relative">
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary font-bold shrink-0">1</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-primary">Talk</h4>
+<p class="text-on-surface-variant">We chat about your big idea and what you like!</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-on-secondary font-bold shrink-0">2</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-secondary">Sketch</h4>
+<p class="text-on-surface-variant">I draw a plan with my markers to see how it looks.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 bg-tertiary rounded-full flex items-center justify-center text-on-tertiary font-bold shrink-0">3</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-tertiary">Build</h4>
+<p class="text-on-surface-variant">The fun part! I get out my glue and tools to create.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container font-bold shrink-0">4</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-on-primary-container">Delivery</h4>
+<p class="text-on-surface-variant">I pack it with care and it's ready for its new home.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="px-margin-mobile py-16 bg-secondary-container rounded-t-[40px] mt-10">
+<h3 class="font-headline-lg-mobile text-on-secondary-container text-center mb-8">Why Choose CMWP</h3>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4 bg-white/40 p-4 rounded-2xl border-2 border-white/60">
+<span class="material-symbols-outlined text-secondary text-4xl">favorite</span>
+<div>
+<h4 class="font-label-lg">Made with care</h4>
+<p class="text-[12px] opacity-80">I take my time to get every detail just right.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white/40 p-4 rounded-2xl border-2 border-white/60">
+<span class="material-symbols-outlined text-primary text-4xl">verified</span>
+<div>
+<h4 class="font-label-lg">Always original</h4>
+<p class="text-[12px] opacity-80">No two crafts are ever exactly the same!</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white/40 p-4 rounded-2xl border-2 border-white/60">
+<span class="material-symbols-outlined text-tertiary text-4xl">sentiment_very_satisfied</span>
+<div>
+<h4 class="font-label-lg">Big smiles guaranteed</h4>
+<p class="text-[12px] opacity-80">If you're not happy, I'll draw you a special card!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-margin-mobile py-16 bg-surface-container-highest">
+<div class="bg-white p-8 rounded-3xl paper-stack border-t-8 border-primary space-y-6">
+<div class="text-center">
+<h3 class="font-headline-md text-primary">Got an idea?</h3>
+<p class="font-body-md text-on-surface-variant">Let's make it real together!</p>
+</div>
+<form class="space-y-4">
+<div>
+<label class="font-label-md text-on-surface ml-1">Your Name</label>
+<input class="w-full bg-surface border-2 border-outline-variant rounded-xl p-3 focus:ring-primary focus:border-primary" placeholder="What's your name?" type="text"/>
+</div>
+<div>
+<label class="font-label-md text-on-surface ml-1">What do you want?</label>
+<input class="w-full bg-surface border-2 border-outline-variant rounded-xl p-3 focus:ring-primary focus:border-primary" placeholder="E.g. A cardboard fort" type="text"/>
+</div>
+<div>
+<label class="font-label-md text-on-surface ml-1">Message</label>
+<textarea class="w-full bg-surface border-2 border-outline-variant rounded-xl p-3 h-32 focus:ring-primary focus:border-primary" placeholder="Tell me more about it!"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-2xl font-headline-md btn-shadow">
+                        Send to Cezar
+                    </button>
+<p class="text-[10px] text-center text-on-surface-variant italic">
+                        * My parents help me check all the messages to keep everyone safe!
+                    </p>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest py-12 px-margin-mobile flex flex-col items-center gap-6 text-center border-t-8 border-double border-secondary-container">
+<img alt="CMWP Logo" class="w-24 h-24 rotate-[-3deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl9T2auVQKVnohjeYm2lU2MMli4DJAQux_mi2yEoIPMMWz2wCxgY-oDvznptRRq5yYvfVqR70YZXorraSVZDPI5JRgVfMUvJmR0zGvnkHFqTB5gwTBP1-iUgtyf7mltYTO1sApYgvKJbiHM4Q0QcBD7xLwwuKaHCff0Hf3mN9k8WFtQEofF5vuHVDeX3Re4QN6c8ylau83puym6OA-ye0X5K1G_sVRxAXAtuPEO6JpvWR6F3EywO-Z"/>
+<div class="space-y-2">
+<h2 class="font-headline-md text-secondary">Crafting Made With Passion</h2>
+<p class="font-body-md italic opacity-75">"Turning ordinary stuff into extraordinary stories."</p>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary hover:scale-125 transition-transform cursor-pointer">brush</span>
+<span class="material-symbols-outlined text-secondary hover:scale-125 transition-transform cursor-pointer">palette</span>
+<span class="material-symbols-outlined text-tertiary hover:scale-125 transition-transform cursor-pointer">monorail</span>
+</div>
+<div class="pt-6 border-t border-outline-variant w-full max-w-xs space-y-4">
+<div class="flex justify-center gap-4 text-label-md text-on-surface-variant underline">
+<a href="#">Privacy Policy</a>
+<a href="#">Safety First</a>
+<a href="#">Contact Parents</a>
+</div>
+<p class="text-label-md opacity-60">© 2024 Made with Glitter &amp; Glue by Crafty Kids</p>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for doodle floating
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            icon.addEventListener('mouseover', () => {
+                icon.classList.add('animate-bounce');
+                setTimeout(() => icon.classList.remove('animate-bounce'), 1000);
+            });
+        });
+        
+        // Randomly adjust paper tilt on load
+        document.querySelectorAll('.paper-stack').forEach(card => {
+            const tilt = (Math.random() * 3 - 1.5).toFixed(1);
+            card.style.transform = `rotate(${tilt}deg)`;
+        });
+    </script>
+</body></html>
