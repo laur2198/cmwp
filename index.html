@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CMWP - Crafting Made With Passion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#3fa9f5",
+                        "on-surface-variant": "#3f4851",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#343029",
+                        "surface-container-high": "#efe7dc",
+                        "inverse-primary": "#95ccff",
+                        "background": "#fff8f1",
+                        "on-background": "#1e1b15",
+                        "surface-tint": "#006399",
+                        "on-secondary-fixed": "#251a00",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#410006",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#004a75",
+                        "on-primary": "#ffffff",
+                        "outline": "#6f7882",
+                        "surface-variant": "#e9e1d7",
+                        "outline-variant": "#bfc7d2",
+                        "secondary-container": "#fdc73a",
+                        "surface-container": "#f5ede2",
+                        "surface-dim": "#e0d9ce",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdf9a",
+                        "on-tertiary-container": "#770113",
+                        "inverse-on-surface": "#f7f0e5",
+                        "primary-fixed": "#cde5ff",
+                        "on-secondary-fixed-variant": "#5a4300",
+                        "on-surface": "#1e1b15",
+                        "tertiary": "#ae2f34",
+                        "surface": "#fff8f1",
+                        "secondary": "#775a00",
+                        "primary": "#006399",
+                        "on-primary-container": "#003b5f",
+                        "tertiary-fixed": "#ffdad8",
+                        "on-tertiary-fixed-variant": "#8c1520",
+                        "tertiary-container": "#ff7876",
+                        "surface-container-low": "#faf3e8",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface-container-highest": "#e9e1d7",
+                        "primary-fixed-dim": "#95ccff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fff8f1",
+                        "on-secondary-container": "#6f5400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Nunito Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #fff8f1; overflow-x: hidden; }
+        
+        .paper-sheet {
+            background-color: #fff8f1;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.1), 4px 12px 24px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .torn-edge {
+            mask-image: radial-gradient(circle at center, transparent 10px, black 11px);
+            mask-size: 20px 20px;
+        }
+
+        .washi-tape-primary {
+            background-color: #3fa9f5;
+            opacity: 0.8;
+            transform: rotate(-15deg);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .washi-tape-secondary {
+            background-color: #fdc73a;
+            opacity: 0.8;
+            transform: rotate(15deg);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .polaroid-frame {
+            background: white;
+            padding: 16px 16px 48px 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #efe7dc;
+        }
+
+        .craft-button {
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom-width: 4px;
+        }
+        .craft-button:active {
+            transform: translateY(2px);
+            border-bottom-width: 0px;
+            margin-bottom: 4px;
+        }
+
+        .grid-jitter > *:nth-child(odd) { transform: rotate(-1deg); }
+        .grid-jitter > *:nth-child(even) { transform: rotate(1deg); }
+        .grid-jitter > *:hover { transform: scale(1.05) rotate(0deg); z-index: 10; transition: all 0.3s ease; }
+
+        .dashed-line {
+            background-image: linear-gradient(to right, #bfc7d2 50%, transparent 50%);
+            background-size: 15px 2px;
+            background-repeat: repeat-x;
+        }
+
+        .hand-drawn-border {
+            border: 2px solid #3f4851;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="w-full py-6 border-b-2 border-outline-variant shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] bg-surface sticky top-0 z-50">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-desktop">
+<div class="text-headline-md font-headline-md text-primary uppercase tracking-tighter hover:rotate-1 hover:scale-105 transition-transform cursor-pointer">CMWP</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-lg text-label-lg text-primary font-bold border-b-2 border-secondary-container pb-1" href="#">Our Workshop</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Gift Shop</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">DIY Kits</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Join the Club</a>
+<button class="ml-4 px-6 py-2 bg-primary-container text-on-primary font-label-lg rounded-full craft-button border-primary border-b-4">Sign In</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop overflow-hidden">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center gap-12 py-24 relative">
+<!-- Doodles -->
+<span class="material-symbols-outlined absolute top-10 left-0 text-secondary-container text-[64px] opacity-40 rotate-12">auto_awesome</span>
+<span class="material-symbols-outlined absolute bottom-10 right-10 text-tertiary text-[48px] opacity-40 -rotate-12">content_cut</span>
+<div class="flex-1 space-y-6">
+<div class="inline-block px-4 py-1 washi-tape-secondary text-on-surface font-label-lg rotate-[-2deg]">Freshly Made!</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight">
+                    Hi! I'm Cezar — I turn <span class="text-primary underline decoration-secondary-container decoration-wavy underline-offset-8">ideas</span> into handmade magic.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Every piece is cut, glued, and stitched with super-duper care right from my kitchen table workshop. Want to see what I'm dreaming up today?
+                </p>
+<div class="flex gap-4 pt-4">
+<button class="px-8 py-4 bg-primary-container text-on-primary font-headline-md rounded-xl craft-button border-primary border-b-4 hover:scale-105 transition-transform">See My Kits</button>
+<button class="px-8 py-4 bg-secondary-container text-on-secondary-container font-headline-md rounded-xl craft-button border-secondary border-b-4 hover:scale-105 transition-transform">Say Hello</button>
+</div>
+</div>
+<div class="flex-1 relative flex justify-center">
+<div class="washi-tape-primary absolute top-[-20px] left-[20%] w-32 h-10 z-20"></div>
+<div class="polaroid-frame rotate-3 hover:rotate-0 transition-all duration-500 cursor-pointer">
+<div class="w-80 h-96 bg-cover bg-center" data-alt="A charming high-resolution photo of a creative 10-year-old boy named Cezar wearing a colorful craft apron covered in paint splatters. He is sitting at a wooden table overflowing with cardboard scraps, felt, and buttons. The lighting is warm and natural, creating a cozy and inspiring atmosphere. The image has a soft focus background to highlight the maker's prideful expression." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAENAKUKBCOqH9cbRTunPuefLSkmDnEOqpNDdi8bo4IdHcfudClDY4vW6NU0AGxqpSDz0KPn6sa-_fjvBDSf0nGVFL7-uOyl8abfkSOfBTyiwXlN2LAnSgVanY8xdL2Gtq0wZWIUiOXdrOM1Qpalm5OdLF1lAfj7cX-hfg6C60inwfTKfT5ta2zDBxOboFZdAamRuJP0berr1fmAWzj4wJPzM_CYPjaq0wihscSFXQzVPt81KGAS_Op')"></div>
+<p class="mt-4 font-headline-md text-on-surface text-center" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive;">Me in my workshop! ✂️</p>
+</div>
+<div class="washi-tape-secondary absolute bottom-[-10px] right-[20%] w-24 h-10 z-20"></div>
+</div>
+</section>
+<!-- Meet the Maker -->
+<section class="py-16">
+<div class="paper-sheet rounded-[40px] p-12 flex flex-col md:flex-row gap-12 items-center border-2 border-outline-variant">
+<div class="flex-1 space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Meet the Maker</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        I've been crafting since I could hold a pair of safety scissors! CMWP started because I wanted to make gifts that actually mean something. Every kit you buy helps me get more supplies for even bigger projects. I love using recycled boxes, bright felt, and lots of imagination!
+                    </p>
+<div class="flex items-center gap-4 pt-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<span class="font-label-lg">Expert Mess Maker</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:w-auto">
+<div class="flex flex-col items-center p-6 bg-surface-container rounded-3xl border-2 border-dashed border-outline-variant hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-primary mb-2" style="font-variation-settings: 'FILL' 1;">edit_audio</span>
+<span class="font-label-lg text-center">Designs it myself</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container rounded-3xl border-2 border-dashed border-outline-variant hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">construction</span>
+<span class="font-label-lg text-center">Builds by hand</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container rounded-3xl border-2 border-dashed border-outline-variant hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-tertiary mb-2" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg text-center">Made with passion</span>
+</div>
+</div>
+</div>
+</section>
+<!-- What I Make Grid -->
+<section class="py-16">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-lg text-headline-lg">What I Can Make For You</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">From personalized room signs to eco-friendly dioramas, I love trying new things!</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 grid-jitter">
+<!-- Card 1 -->
+<div class="bg-white p-6 polaroid-frame border-2 border-outline-variant">
+<div class="h-48 w-full bg-cover bg-center mb-4 rounded-sm" data-alt="A close-up photograph of a custom-designed wooden name plate for a bedroom door. The name is written in bright, 3D felt letters with colorful glitter stars and hand-painted patterns. The style is joyful, tactile, and professional-looking for a handmade craft." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAP4FuJqEXVBsRblMHvVzhpQm3jVXsG4v8u_BDCC6utV7-Hm_BG98ltmZnLL4chUGk8txqmGl1rLI51y7Y-I3pWhrwKPzX_gs7Ey89kATkRBjWs8rJr_o8Opul1gqEMqwrQ8DBDwF9qtiEPn15ZOok4zxQWBWfeSbNKEdEko9W-xHKeVATkAw09yUcxfj9VwZnt7c5m5v1IT5PlleUvc4T-kPH0t2H6M3Nul6f7qgw7fFr3fbQkYApt')"></div>
+<h3 class="font-headline-md mb-2">Custom Design</h3>
+<p class="font-body-md text-on-surface-variant">Names, room signs, and logos made just for you.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 polaroid-frame border-2 border-outline-variant">
+<div class="h-48 w-full bg-cover bg-center mb-4 rounded-sm" data-alt="A photo of a complex cardboard castle build with towers made from toilet paper rolls and a drawbridge that actually moves. The castle is painted in metallic silver with bright flags made of fabric. It sits on a table surrounded by crafting tools like glue guns and scissors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOdLBxBmeWvU3uBnkvhAFfBKkYCXehaqf3QYlb_dyMPdoBdLmvf0cqwjm17GGKL_ix5Qc9qMV_1AWweBK4a2H0ys2PLqCMhJlj19R20FmNYfgNPLK_rEooIBi4WzYzbWRZI9PNdKHzC9NZFzhIcGHnA8BYWkayJrO1PLVjRvObmGqcoTGNfIU5rrPBiImDrav5MEusDeV1VBI2EgpqQ8xbGBPd4B11AwmPx1C9HJLWLgZxD-eLj7xg')"></div>
+<h3 class="font-headline-md mb-2">Handmade Builds</h3>
+<p class="font-body-md text-on-surface-variant">3D cardboard creations and mini dioramas.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-6 polaroid-frame border-2 border-outline-variant">
+<div class="h-48 w-full bg-cover bg-center mb-4 rounded-sm" data-alt="A beautifully wrapped gift box with a handmade card featuring pressed flowers and a hand-drawn illustration. The ribbon is a rustic twine and the tag says 'With Love'. The scene is warm, inviting, and emphasizes the personal touch of handmade gifting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwPRfm5aBp62LhGfC21LA3Pnob7Bx4cte-ccHSQYQaWG9ZTqMjvgqXn1nTPcycm0N4593X1tEE4P3PP5JgPj1DxOq4qXzi-3lSrAN4M0yAcWxs8fYdTfiALAJhenx-NkpIy9CDHxMAValzaBnsnxlCp2MQh6_Lr5ZiEKpUKaAz7o_zlFPq5Va2NPJIjLPp_THBnJBkUEt8f3e78C5iaH-7OZEhcN5krPUXW_yV6wHfCIuZkI1vGl8e')"></div>
+<h3 class="font-headline-md mb-2">Gift Crafts</h3>
+<p class="font-body-md text-on-surface-variant">The perfect present for birthdays or holidays.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-6 polaroid-frame border-2 border-outline-variant">
+<div class="h-48 w-full bg-cover bg-center mb-4 rounded-sm" data-alt="An creative art piece made entirely from recycled materials, including plastic bottle caps arranged into a colorful mosaic of a turtle. The art is mounted on a reclaimed wood board, showcasing a sustainable and artistic use of waste materials." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAmTQt5fhkkMSj3mXD0tCXIThePsZI2QcGF2VNowfw1FnNFl5xHYFAwhVsvBaFcDvonXRE1kDbpCs-5sc54PNjPaC_D1MGt6UHpxyG10NczbBFWx3PWeERGRGdl3yrnlIlq308q8hRGaaj_3vdlRr8PasmnpFB4iR3r2DLKFaAEIurbWP2XHsJYl5RTvWbt0hfKjAX6fxsl6zUV-8crsJcB8YLE6zbUR_mRW2eb0rJsEKsvPaEHIEs')"></div>
+<h3 class="font-headline-md mb-2">Eco Art</h3>
+<p class="font-body-md text-on-surface-variant">Turning "trash" into beautiful wall masterpieces.</p>
+</div>
+</div>
+</section>
+<!-- Scrapbook Gallery -->
+<section class="py-16 relative">
+<h2 class="font-headline-lg text-headline-lg mb-12 text-center">My Scrapbook Gallery</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+<div class="relative group">
+<div class="washi-tape-primary absolute top-[-10px] left-1/4 w-16 h-6 z-10"></div>
+<div class="polaroid-frame -rotate-6 group-hover:rotate-0 transition-transform cursor-zoom-in">
+<div class="h-64 w-full bg-cover bg-center" data-alt="A detailed shot of a handmade robot mascot made from aluminum cans and wire. The robot has big googly eyes and is holding a small felt heart. The setting is a bright craft studio." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGOd5EUt2N9W6cIiCfYlb9UUYS7omdQn_6s8CgLFG3oFXZHM2LQRxViD7imjWFy1ECzx8UdY6NyHHi1U0UJkK6ce2HJxd6XA5q8sFXL8B118qv_wyIpcIlbgITGeOEUGXk2RrY6mqCOGaZLQMxTt4jR75BSGwMI7WgU6W0XFR3li-fqBDv6llw8wcZHUoH1CRibk6FH_cJgWgV8n_EAJNm_VMSz-ttSfXRM2kjTNf5hb1d4DK6iDht')"></div>
+</div>
+</div>
+<div class="relative group translate-y-8">
+<div class="washi-tape-secondary absolute top-[-5px] right-1/4 w-16 h-6 z-10"></div>
+<div class="polaroid-frame rotate-2 group-hover:rotate-0 transition-transform cursor-zoom-in">
+<div class="h-64 w-full bg-cover bg-center" data-alt="A vibrant collection of hand-painted river stones featuring different animal faces like owls, foxes, and cats. The colors are bold and the painting style is precise yet playful." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ8ceZDSQcqas0uatsCtrk32Lyr1Sc2ztxxMom1Px8QKORThavl0kr5-X4wKs0OsqjWNWNohh_UaPDQxJIQv8oEOt2giGhOI8YNmu-mfCdU-LOL02MXcENcc7OcLYwqJwV_M3yhMuzj8ZiuiiflR9v89CmRh4tG1ubfBRksZSzFKj3z0AeLtchAuc2TgPoukGD3uS-MoTbBRxKKtFNerfIJSX4Y-U6co2hfygjkjL3CDlbQSyFswT7')"></div>
+</div>
+</div>
+<div class="relative group">
+<div class="washi-tape-primary absolute bottom-[-10px] left-1/2 w-20 h-6 z-10"></div>
+<div class="polaroid-frame -rotate-3 group-hover:rotate-0 transition-transform cursor-zoom-in">
+<div class="h-64 w-full bg-cover bg-center" data-alt="A photo of a custom-stitched felt superhero cape with a big lightning bolt emblem. The stitching is neat and colorful, laying flat on a white surface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQH_07i8hanTYrncIEjWfDKjWsNESRErTFjjghFfH3ani7LGa67Ap8ciDJvSLRPqSsKaoIkXwdIwNN8GJGxWb6dli5IRxraA18uGM-kr59NFIztJRkkfSKdwncnwvqwqsuK5jJgeU8LQSmkrqd8rAgWqGe83AKlxEp34DpThFh5XLJbljBP9jh7s9yAjqmVFHtBTsF9NCLZSSxjvWHHYjTQnSAG30ZehTR38c4xr5EVzDD-67hAjkf')"></div>
+</div>
+</div>
+<div class="relative group translate-y-12">
+<div class="washi-tape-secondary absolute top-[-15px] left-0 w-16 h-6 z-10"></div>
+<div class="polaroid-frame rotate-12 group-hover:rotate-0 transition-transform cursor-zoom-in">
+<div class="h-64 w-full bg-cover bg-center" data-alt="A complex paper-cut art piece showing a forest scene with multiple layers of depth. Different shades of green and brown paper create a 3D effect in a shadow box frame." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSR2xViIt1SXh7-woasQaz6aKjsiAPVseTXrrGIGcx0jOt6zbnmzgJHvJbdcUT4a4yjW87WC35XYl_ZJHn-nyeKMhRHcn3moAk0YC0HPrId9xS_Evj9XrEQoU9gYVMR_nFw_Pwa7-bpJBdI5TVWkJV-sNxuJBsV8wJgHjWOXU2twOFkng6_cf9bYr7xOwioF5QrctHTBjrmRDn0qPjKc_nJUZxQ4np95DMChlNiJobqG9F05Wj-DUc')"></div>
+</div>
+</div>
+</div>
+<div class="h-24"></div>
+</section>
+<!-- How I Work Timeline -->
+<section class="py-24 bg-surface-container rounded-[80px] px-12 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 washi-tape-primary opacity-20"></div>
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg">How We Make Magic</h2>
+<div class="dashed-line h-1 w-32 mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+<!-- Connector Line -->
+<div class="hidden md:block absolute top-12 left-12 right-12 h-1 border-t-2 border-dashed border-outline-variant z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center space-y-4">
+<div class="w-24 h-24 bg-white rounded-full border-4 border-primary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-primary">lightbulb</span>
+</div>
+<h3 class="font-headline-md">1. The Idea</h3>
+<p class="font-body-md text-on-surface-variant">Tell me what you love, and I'll sketch a plan!</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center space-y-4">
+<div class="w-24 h-24 bg-white rounded-full border-4 border-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-secondary">inventory_2</span>
+</div>
+<h3 class="font-headline-md">2. Picking Gear</h3>
+<p class="font-body-md text-on-surface-variant">I hunt for the perfect papers and colors.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center space-y-4">
+<div class="w-24 h-24 bg-white rounded-full border-4 border-tertiary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-tertiary">content_cut</span>
+</div>
+<h3 class="font-headline-md">3. Hand-Making</h3>
+<p class="font-body-md text-on-surface-variant">The fun part! Cutting, gluing, and creating.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center space-y-4">
+<div class="w-24 h-24 bg-white rounded-full border-4 border-primary-container flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px] text-primary-container">package_2</span>
+</div>
+<h3 class="font-headline-md">4. Delivery</h3>
+<p class="font-body-md text-on-surface-variant">Sent to you in a box decorated with doodles!</p>
+</div>
+</div>
+</section>
+<!-- Why Choose CMWP -->
+<section class="py-16">
+<div class="bg-secondary-container rounded-full py-8 px-12 flex flex-col md:flex-row justify-between items-center gap-8 border-b-4 border-secondary shadow-lg">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-headline-md text-on-secondary-container">100% Kid-Powered</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-on-secondary-container opacity-20"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-headline-md text-on-secondary-container">Planet-Friendly Materials</span>
+</div>
+<div class="hidden md:block w-px h-12 bg-on-secondary-container opacity-20"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-headline-md text-on-secondary-container">Hand-Delivered Love</span>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 flex flex-col md:flex-row gap-16 items-start">
+<div class="flex-1 space-y-8">
+<h2 class="font-headline-lg text-headline-xl">Want something special?</h2>
+<p class="font-body-lg text-body-lg">
+                    I love custom challenges! Send me a note about what you're thinking, and I'll let you know if my kitchen table can handle it.
+                </p>
+<div class="bg-white p-8 rounded-3xl border-2 border-outline-variant rotate-[-2deg] shadow-lg">
+<h4 class="font-headline-md mb-4">Official Shop Badge</h4>
+<img alt="CMWP Logo" class="w-32 h-32 mx-auto hover:rotate-12 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvahVSc1GU4osK19L3GA9G6zm2UyG28Y4x4sijlmvZpgOxL0cSxyHdZo6LhojtLsEk8UUX-fXw0JBZ6v8NYuyZnLaZtaesKbkFGGjZBqgkcP-kkifGvXOKdeJ5LbPWIeaKkmPLwEI610CHdfs-fdleb6fZZnmp7INnb9EO6se-IhjQEAAyQKrw8DQ1Qczb5WFoZywcdPU96-PzNbBBFtvnEUME1jZCYhrA9ZPGTvFJqXB64cLJneFhLOYQ"/>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="paper-sheet p-10 rounded-sm hand-drawn-border bg-[#ffffff]">
+<div class="absolute -top-4 -right-4 washi-tape-primary w-24 h-8"></div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-lg block">Your Name (or Your Grown-up's Name)</label>
+<input class="w-full px-4 py-3 bg-surface-bright border-2 border-outline rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="e.g. Awesome Art Fan" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg block">Email for my Secretary (Mom)</label>
+<input class="w-full px-4 py-3 bg-surface-bright border-2 border-outline rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="hello@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg block">What should I make?</label>
+<textarea class="w-full px-4 py-3 bg-surface-bright border-2 border-outline rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="I want a cardboard spaceship with blue glitter..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-tertiary text-white font-headline-md rounded-xl craft-button border-[#8c1520] border-b-4 hover:scale-[1.02] active:scale-95 transition-all" type="submit">Send to Workshop 🚀</button>
+</form>
+<div class="mt-8 flex justify-between items-center opacity-50 font-body-md" style="font-family: 'Comic Sans MS', cursive;">
+<span>Checked for glue spots ✓</span>
+<span>Date: Today</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 py-12 rounded-t-[40px] bg-surface-container-high border-t-4 border-dashed border-outline-variant">
+<div class="flex flex-col items-center gap-6 w-full px-margin-mobile md:px-margin-desktop text-center">
+<div class="font-headline-sm text-headline-sm text-tertiary">CMWP</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-secondary-container decoration-4" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-secondary-container decoration-4" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-secondary-container decoration-4" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-secondary-container decoration-4" href="#">Contact Us</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-4">© 2024 Crafting Made With Passion. Hand-stitched with love.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-primary">heart_plus</span>
+<span class="material-symbols-outlined text-secondary">star_half</span>
+<span class="material-symbols-outlined text-tertiary">palette</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for craft cards
+        document.querySelectorAll('.polaroid-frame').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `scale(1.02) rotate(${Math.random() * 4 - 2}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Simple paralax for doodles
+        window.addEventListener('scroll', () => {
+            const doodles = document.querySelectorAll('.material-symbols-outlined.absolute');
+            const scrolled = window.pageYOffset;
+            doodles.forEach((doodle, index) => {
+                const speed = 0.1 * (index + 1);
+                doodle.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+            });
+        });
+    </script>
+</body></html>
